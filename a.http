@@ -1,0 +1,319 @@
+# POST http://localhost:5000/users/register
+# Content-Type: application/json
+
+# {
+#     "username": "bharath7327",
+#     "password": "Welcome@123",
+#     "role": "Doctor",
+#     "fullName": "Bharath S",
+#     "specialty": "Opthamology",
+#     "contactNumber": "1234567890",
+#     "email": "bharath7327@gmail.com",
+#     "yearsOfExperience": 5
+# }
+
+# POST http://localhost:5000/users/register
+# Content-Type: application/json
+
+# {
+#     "username": "bharathi8400",
+#     "password": "Welcome@123",
+#     "role": "Doctor",
+#     "fullName": "Bharathi ",
+#     "specialty": "Caridology",
+#     "contactNumber": "1234567890",
+#     "email": "bharathi@gmail.com",
+#     "yearsOfExperience": 5
+# }
+
+# POST http://localhost:5000/users/register
+# Content-Type: application/json
+
+# {
+#     "username": "arjun9999",
+#     "password": "Welcome@123",
+#     "role": "Patient",
+#     "fullName": "Arjun C R",
+#     "dateOfBirth": "2003-07-06",
+#     "contactNumber": "1234567890",
+#     "email": "aarjun@gmail.com",
+#     "address": "123, Dubai Main street, Dubai narrow street, Dubai"
+# }
+
+# POST http://localhost:5000/users/register
+# Content-Type: application/json
+
+# {
+#     "username": "barath2003",
+#     "password": "Welcome@123",
+#     "role": "Patient",
+#     "fullName": "Barath Raj C R",
+#     "dateOfBirth": "2003-07-06",
+#     "contactNumber": "1234567890",
+#     "email": "barath69@gmail.com",
+#     "address": "123, Dubai Main street, Dubai narrow street, Dubai"
+# }
+
+# POST http://localhost:5000/users/login
+# Content-Type: application/json
+
+# {
+#     "username": "bharath7327",
+#     "password": "Welcome@123"
+# }
+
+# POST http://localhost:5000/clinic
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRG9jdG9yIiwic3ViIjoiYmhhcmF0aDczMjciLCJpYXQiOjE3NjA5ODM2MDcsImV4cCI6MTc2MTA3MDAwN30.uzOUmM_4Q3s2tvxgmSjLdDNRszMUOrUvPB_H-t-ZhyU
+# Content-Type: application/json
+
+# {
+#     "clinicName":"Krishna Mental Hospital",
+#     "location":"Kilpauk",
+#     "doctor": {
+#         "doctorId":1
+#     },
+#     "contactNumber":"9345672511",
+#     "establishedYear":2003
+# }
+
+# POST http://localhost:5000/users/login
+# Content-Type: application/json
+
+# {
+#     "username": "barath2003",
+#     "password": "Welcome@123"
+# }
+
+# POST http://localhost:5000/appointment
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUGF0aWVudCIsInN1YiI6ImJhcmF0aDIwMDMiLCJpYXQiOjE3NjA5ODM3MjIsImV4cCI6MTc2MTA3MDEyMn0.Iz650MVcgH2H-TOqmazYxGL9QBBFvfgT5Av1VnfJcLU
+# Content-Type: application/json
+
+# {
+#     "patient":{
+#         "patientId":2
+#     },
+#     "clinic":{
+#         "clinicId":3
+#     },
+#     "appointmentDate":"2003-12-01",
+#     "status":"Pending",
+#     "purpose":"Count decreased"
+# }
+
+# DELETE http://localhost:5000/patient/2
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUGF0aWVudCIsInN1YiI6ImJhcmF0aDIwMDMiLCJpYXQiOjE3NjA5ODM3MjIsImV4cCI6MTc2MTA3MDEyMn0.Iz650MVcgH2H-TOqmazYxGL9QBBFvfgT5Av1VnfJcLU
+# Content-Type: application/json
+
+
+#-----------Doctor-----------------------
+# POST http://localhost:5000/users/login
+# Content-Type: application/json
+
+# {
+#     "username": "bharath7327",
+#     "password": "Welcome@123"
+# }
+
+# GET http://localhost:5000/doctor/1
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRG9jdG9yIiwic3ViIjoiYmhhcmF0aDczMjciLCJpYXQiOjE3NjEwNDgwMjAsImV4cCI6MTc2MTEzNDQyMH0.IQb7Gi7iFr6Njtrrcy_lQw2vIkDrkIulxM3ItbzZVt4
+
+# PUT http://localhost:5000/doctor/1
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRG9jdG9yIiwic3ViIjoiYmhhcmF0aDczMjciLCJpYXQiOjE3NjEwNDgwMjAsImV4cCI6MTc2MTEzNDQyMH0.IQb7Gi7iFr6Njtrrcy_lQw2vIkDrkIulxM3ItbzZVt4
+# Content-Type: application/json
+
+# {
+#     "fullName": "Bharath S",
+#     "specialty": "Opthamology",
+#     "contactNumber": "1234567890",
+#     "email": "bharath7327@gmail.com",
+#     "yearsOfExperience": 10
+# }
+
+# GET http://localhost:5000/doctor
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRG9jdG9yIiwic3ViIjoiYmhhcmF0aDczMjciLCJpYXQiOjE3NjEwNDgwMjAsImV4cCI6MTc2MTEzNDQyMH0.IQb7Gi7iFr6Njtrrcy_lQw2vIkDrkIulxM3ItbzZVt4
+
+# GET http://localhost:5000/doctor/experience
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRG9jdG9yIiwic3ViIjoiYmhhcmF0aDczMjciLCJpYXQiOjE3NjEwNDgwMjAsImV4cCI6MTc2MTEzNDQyMH0.IQb7Gi7iFr6Njtrrcy_lQw2vIkDrkIulxM3ItbzZVt4
+
+
+#------------Patient----------------------
+
+# POST http://localhost:5000/users/login
+# Content-Type: application/json
+
+# {
+#     "username": "barath2003",
+#     "password": "Welcome@123"
+# }
+
+# GET http://localhost:5000/patient/6
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUGF0aWVudCIsInN1YiI6ImJhcmF0aDIwMDMiLCJpYXQiOjE3NjEwNTAyMjMsImV4cCI6MTc2MTEzNjYyM30.TeNLwMcsf4xHzYwlFbkC86a93E0gw5xGel8MmIqb4OQ
+
+# GET http://localhost:5000/patient
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUGF0aWVudCIsInN1YiI6ImJhcmF0aDIwMDMiLCJpYXQiOjE3NjEwNTAyMjMsImV4cCI6MTc2MTEzNjYyM30.TeNLwMcsf4xHzYwlFbkC86a93E0gw5xGel8MmIqb4OQ
+
+PUT http://localhost:5000/patient/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUGF0aWVudCIsInN1YiI6ImJhcmF0aDIwMDMiLCJpYXQiOjE3NjEwNTAyMjMsImV4cCI6MTc2MTEzNjYyM30.TeNLwMcsf4xHzYwlFbkC86a93E0gw5xGel8MmIqb4OQ
+
+{
+    "fullName": "Barath Raj C R",
+    "dateOfBirth": "2003-07-06",
+    "contactNumber": "1234567890",
+    "email": "barath69@gmail.com",
+    "address": "123, Dubai Main Road, Dubai narrow street, Dubai"
+}
+
+#-------------------------------------------
+# GET  http://localhost:5000/patient/1
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRG9jdG9yIiwic3ViIjoiYmhhcmF0aDczMjciLCJpYXQiOjE3NjA3OTAzNDAsImV4cCI6MTc2MDg3Njc0MH0.eqLSRTHe7Ixz-N-wJgwsQ5jKo4c7SeIQPFit_8m5IT8
+
+
+# GET http://localhost:5000/users/3
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUGF0aWVudCIsInN1YiI6ImJhcmF0aDIwMDMiLCJpYXQiOjE3NjA3Nzk4NzcsImV4cCI6MTc2MDg2NjI3N30.293p4lAdTKF6DZuJpyt57kGkSJyaRLRBYfySuxY-98Y
+
+# POST http://localhost:5000/doctor
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUEFUSUVOVCIsInN1YiI6IkF2aW5hc3VoaCIsImlhdCI6MTc2MDcxOTM4OSwiZXhwIjoxNzYwODA1Nzg5fQ.iE482GmXmg6_WM2cABa-ZvdfzsQvfRcF7gw-9WmFhJ0
+# Content-Type: application/json
+
+# {
+#   "fullName": "Dr. Ayesha Khan",
+#   "specialty": "Cardiology",
+#   "contactNumber": "9876543210",
+#   "email": "ayesha.khan@example.com",
+#   "yearsOfExperience": 12
+# }
+
+
+# GET http://localhost:5000/users/1
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUEFUSUVOVCIsInN1YiI6IkF2aW5hc3VoaCIsImlhdCI6MTc2MDcxOTM4OSwiZXhwIjoxNzYwODA1Nzg5fQ.iE482GmXmg6_WM2cABa-ZvdfzsQvfRcF7gw-9WmFhJ0
+
+# POST http://localhost:5000/users/login
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRE9DVE9SIiwic3ViIjoiam9obl9kb2UiLCJpYXQiOjE3NjA3MTkyNDQsImV4cCI6MTc2MDgwNTY0NH0.3P0zEACJ23Kgipe1r0XEvqwn8TY7MSg2Rs6XoKLV5rQ
+# Content-Type: application/json
+
+# {
+#     "username": "Avinasuhh",
+#     "password": "securePassword123"
+# }
+
+# POST http://localhost:5000/users/register
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRE9DVE9SIiwic3ViIjoiam9obl9kb2UiLCJpYXQiOjE3NjA3MTkyNDQsImV4cCI6MTc2MDgwNTY0NH0.3P0zEACJ23Kgipe1r0XEvqwn8TY7MSg2Rs6XoKLV5rQ
+# Content-Type: application/json
+
+# {
+#   "username": "Avinasuhh",
+#   "password": "securePassword123",
+#   "role": "PATIENT",
+#   "fullName": "Yennam Avinash",
+#   "contactNumber": "7731987063",
+#   "email": "yennam.10842056@ltimindtree.com",
+#   "address": "123 Main Street, Hyderabad",
+#   "dateOfBirth": "2003-02-29",
+#   "specialty": null,
+#   "yearsOfExperience": null
+# }
+
+
+# GET http://localhost:5000/users/1
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRE9DVE9SIiwic3ViIjoiam9obl9kb2UiLCJpYXQiOjE3NjA3MTkyNDQsImV4cCI6MTc2MDgwNTY0NH0.3P0zEACJ23Kgipe1r0XEvqwn8TY7MSg2Rs6XoKLV5rQ
+
+# POST http://localhost:5000/users/login
+# Content-Type: application/json
+
+# {
+#   "username": "john_doe",
+#   "password": "securePassword123"
+# }
+
+# POST http://localhost:5000/users/register
+# Content-Type: application/json
+
+# {
+#   "username": "john_doe",
+#   "password": "securePassword123",
+#   "role": "DOCTOR",
+#   "fullName": "John Doe",
+#   "contactNumber": "1234567890",
+#   "email": "john.doe@example.com",
+#   "address": "123 Main Street",
+#   "dateOfBirth": "1990-01-01",
+#   "specialty": "Cardiology",
+#   "yearsOfExperience": 5
+# }
+
+# POST http://localhost:5000/user/register
+# Content-Type: application/json
+
+# {
+#   "username": "john_doe",
+#   "password": "securePassword123",
+#   "role": "DOCTOR",
+#   "fullName": "John Doe",
+#   "contactNumber": "1234567890",
+#   "email": "john.doe@example.com",
+#   "address": "123 Main Street",
+#   "dateOfBirth": "1990-01-01",
+#   "specialty": "Cardiology",
+#   "yearsOfExperience": 5
+# }
+
+
+
+
+
+
+# GET http://localhost:5000/doctor
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiZG9jdG9yIiwic3ViIjoiZGFtb24iLCJpYXQiOjE3NTk5NDU1MjEsImV4cCI6MTc2MDAzMTkyMX0.cIwf4aAMy4YceTVvvqdQXtlux0_IUPwHDkFYscylWy0
+
+# {
+#     "fullName": "Avinash Yennam",
+#      "specialty": "Neuro Surgeon",
+#   "contactNumber": "9876543212",
+#   "email": "yennam@gmail.com",
+#   "yearsOfExperience": 6
+# }
+
+# POST http://localhost:5000/users/login
+# Content-Type: application/json
+
+# {
+#     "username": "damon",
+#     "password": "damon123"
+# }
+
+# {
+#     "username": "damon",
+#     "password": "damon123",
+#      "role": "doctor",
+#      "fullName": "Damon Salvatour",
+#      "contactNumber": "9876543212",
+#      "email": "damon@gmail.com",
+#      "address": "Mystic falls",
+#      "dateOfBirth": "23-10-2001",
+#      "specialty": "Surgeon",
+#      "yearsOfExperience": 5
+# }
+
+# {
+#     "fullName": "Bishnu raut",
+#     "dateOfBirth": "23-10-2001",
+#     "contactNumber": "9876543212",
+#     "email": "bishnu@gmail.com",
+#     "address": "puri"
+# }
+
+# {
+#     "username": "Bishnu",
+#     "password": "b@1234"
+# }
+
+    # "role": "patient",
+    # "fullName": "Bishnu raut",
+    # "contactNumber": "9876543212",
+    # "email": "bishnu@gmail.com",
+    # "address": "puri",
+    # "dateOfBirth": "23-10-2001",
+    # "specialty": "Surgeon",
+    # "yearsOfExperience": 5

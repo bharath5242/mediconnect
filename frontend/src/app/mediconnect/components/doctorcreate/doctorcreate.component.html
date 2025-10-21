@@ -1,0 +1,135 @@
+<!-- <div class="container">
+    <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label>Doctor ID:</label>
+            <input type="string" formControlName="doctorId" name="doctorId" />
+            <div *ngIf="submitted && doctorForm.controls['doctorId'].invalid">
+                Doctor ID is required and must be greater than 0.
+            </div>
+        </div>
+
+        <div>
+            <label>Full Name:</label>
+            <input type="text" formControlName="fullName" name="name" />
+            <div *ngIf="submitted && doctorForm.controls['fullName'].invalid">
+                Full Name is required and must be at least 2 characters.
+            </div>
+        </div>
+
+        <div>
+            <label>Specialty:</label>
+            <input type="text" formControlName="specialty" name="speciality" />
+            <div *ngIf="submitted && doctorForm.controls['specialty'].invalid">
+                Specialty is required.
+            </div>
+        </div>
+
+        <div>
+            <label>Contact Number:</label>
+            <input type="text" formControlName="contactNumber" name="mobile" />
+            <div *ngIf="submitted && doctorForm.controls['contactNumber'].invalid">
+                Contact Number must be exactly 10 digits.
+            </div>
+        </div>
+
+        <div>
+            <label>Email:</label>
+            <input type="email" formControlName="email" name="email" />
+            <div *ngIf="submitted && doctorForm.controls['email'].invalid">
+                Valid Email is required.
+            </div>
+        </div>
+
+        <div>
+            <label>Years of Experience:</label>
+            <input type="text" formControlName="yearsOfExperience" name="yearsOfExperience" />
+            <div *ngIf="submitted && doctorForm.controls['yearsOfExperience'].invalid">
+                Experience is required and must be greater than 0.
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="doctorForm.invalid">Submit</button>
+        <button [routerLink]="['/dashboard']">Back to dashboard</button>
+        <button type="button" (click)="resetForm()">Reset</button>
+
+        <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+        <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+    </form>
+</div> -->
+
+<div class="container mt-4">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h4>Create Doctor</h4>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+
+        <!-- Doctor ID -->
+        <!-- <div class="mb-3">
+          <label class="form-label">Doctor ID</label>
+          <input type="number" class="form-control" formControlName="doctorId" />
+          <div *ngIf="(submitted || doctorForm.controls['doctorId'].touched) && doctorForm.controls['doctorId'].invalid" class="text-danger mt-1">
+            Doctor ID is required and must be greater than 0.
+          </div>
+        </div> -->
+
+        <!-- Full Name -->
+        <div class="mb-3">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" formControlName="fullName" />
+          <div *ngIf="(submitted || doctorForm.controls['fullName'].touched) && doctorForm.controls['fullName'].invalid" class="text-danger mt-1">
+            Full Name is required and must be at least 2 characters.
+          </div>
+        </div>
+
+        <!-- Specialty -->
+        <div class="mb-3">
+          <label class="form-label">Specialty</label>
+          <input type="text" class="form-control" formControlName="specialty" />
+          <div *ngIf="(submitted || doctorForm.controls['specialty'].touched) && doctorForm.controls['specialty'].invalid" class="text-danger mt-1">
+            Specialty is required.
+          </div>
+        </div>
+
+        <!-- Contact Number -->
+        <div class="mb-3">
+          <label class="form-label">Contact Number</label>
+          <input type="text" class="form-control" formControlName="contactNumber"
+                 maxlength="10" pattern="\d*" (keypress)="allowOnlyDigits($event)" />
+          <div *ngIf="(submitted || doctorForm.controls['contactNumber'].touched) && doctorForm.controls['contactNumber'].invalid" class="text-danger mt-1">
+            Contact Number must be exactly 10 digits.
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" formControlName="email" />
+          <div *ngIf="(submitted || doctorForm.controls['email'].touched) && doctorForm.controls['email'].invalid" class="text-danger mt-1">
+            Valid Email is required.
+          </div>
+        </div>
+
+        <!-- Years of Experience -->
+        <div class="mb-3">
+          <label class="form-label">Years of Experience</label>
+          <input type="number" class="form-control" formControlName="yearsOfExperience" />
+          <div *ngIf="(submitted || doctorForm.controls['yearsOfExperience'].touched) && doctorForm.controls['yearsOfExperience'].invalid" class="text-danger mt-1">
+            Experience is required and must be greater than 0.
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-success" [disabled]="doctorForm.invalid">Submit</button>
+          <button type="button" class="btn btn-warning" (click)="resetForm()">Reset</button>
+        </div>
+
+        <!-- Messages -->
+        <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+      </form>
+    </div>
+  </div>
+</div>

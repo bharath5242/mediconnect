@@ -1,0 +1,17 @@
+<!-- <div></div>
+    <ul>
+        <li *ngFor="let item of patient">
+            {{item}}
+        </li>
+    </ul>
+</div> -->
+
+
+<div *ngIf="patient">
+    <p>Full Name: {{ patient.fullName }}</p>
+    <p>Email: {{ patient.email }}</p>
+    <p>Contact: {{ patient.contactNumber }}</p>
+    <p>Date of Birth: {{ patient.dateOfBirth }}</p>
+    <p>Address: {{ patient.address }}</p>
+  </div>
+  

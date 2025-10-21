@@ -1,0 +1,107 @@
+<!-- Patient View -->
+<div class="container mt-4" *ngIf="role === 'PATIENT'">
+    <!-- Patient Details Card -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Patient Profile</h5>
+        </div>
+        <div class="card-body">
+            <h6 class="card-title">{{ patientDetails.fullName }}</h6>
+            <p class="card-text">
+                <strong>Email:</strong> {{ patientDetails.email }}<br>
+                <strong>Phone:</strong> {{ patientDetails.contactNumber }}<br>
+                <strong>Age:</strong> {{ patientDetails.dateOfBirth }}
+            </p>
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-primary" (click)="navigateToEditPatient()">Edit Account</button>
+                <button class="btn btn-outline-danger" (click)="deletePatient()">Delete Account</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointments Section -->
+    <div class="mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5>Your Appointments</h5>
+            <button class="btn btn-primary" [routerLink]="['/appointment']">Create Appointment</button>
+        </div>
+
+        <div *ngIf="appointments.length; else noAppointments">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let appt of appointments">
+                    <strong>{{ appt.date }}</strong> - {{ appt.clinicName }} with Dr. {{ appt.doctor }}
+                </li>
+            </ul>
+        </div>
+        <ng-template #noAppointments>
+            <p class="text-muted">No appointments scheduled.</p>
+        </ng-template>
+    </div>
+
+    <!-- Clinics Section -->
+    <div>
+        <h5 class="mb-3">Available Clinics</h5>
+        <div class="row" *ngIf="clinics.length; else noClinicsPatient">
+            <div class="col-md-4 mb-3" *ngFor="let clinic of clinics">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">{{ clinic.name }}</h6>
+                        <p class="card-text">{{ clinic.address }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #noClinicsPatient>
+            <p class="text-muted">No Clinics available.</p>
+        </ng-template>
+    </div>
+</div>
+
+<!-- Doctor View -->
+<div class="container mt-4" *ngIf="role === 'DOCTOR'">
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-success text-white">
+            <h5 class="mb-0">Doctor Profile</h5>
+        </div>
+        <div class="card-body">
+            <h6 class="card-title">{{ doctorDetails.fullName }}</h6>
+            <p class="card-text">
+                <strong>Email:</strong> {{ doctorDetails.email }}<br>
+                <strong>Phone:</strong> {{ doctorDetails.contactNumber }}<br>
+                <strong>Specialization:</strong> {{ doctorDetails.specialty }}<br>
+                <strong>Years of experience:</strong> {{ doctorDetails.yearsOfExperience }}
+            </p>
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-success" (click)="editDoctor()">Edit Account</button>
+                <button class="btn btn-outline-danger" (click)="deleteDoctor()">Delete Account</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Doctor Clinics Section -->
+    <div class="mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5>Your Clinics</h5>
+            <button class="btn btn-primary" (click)="createClinic()">Create Clinic</button>
+        </div>
+        <div *ngIf="clinics.length !== 0; else noClinicsDoctor">
+            <div class="row">
+                <div class="col-md-4 mb-3" *ngFor="let clinic of clinics">
+                    <div class="card h-100" (click)="onClinicSelect(clinic)">
+                        <div class="card-body">
+                            <h6 class="card-title">{{ clinic.clinicName }}</h6>
+                            <p class="card-text">{{ clinic.location }}</p>
+                            <div class="d-flex justify-content-between mt-3">
+                                <button class="btn btn-sm btn-outline-primary" [routerLink]="['/clinic-edit', clinic.clinicId]">Edit</button>
+                                <button class="btn btn-sm btn-outline-danger" (click)="deleteClinic(clinic.clinicId)">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #noClinicsDoctor>
+            <p class="text-muted">You haven't added any clinics yet.</p>
+        </ng-template>
+    </div>
+</div>
