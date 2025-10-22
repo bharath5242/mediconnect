@@ -259,6 +259,10 @@ export class DoctorEditComponent implements OnInit {
   initializeForm(): void {
     this.doctorForm = this.formBuilder.group({
       fullName: ['', [Validators.required, Validators.minLength(2)]],
+      
+      username: ['doctorjohn', Validators.required],
+      password: ['Password@123', Validators.required],
+
       //username: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9]+$/)]],
       //password: ['', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[A-Z])(?=.*\d).+$/)]],
       specialty: ['', [Validators.required]],

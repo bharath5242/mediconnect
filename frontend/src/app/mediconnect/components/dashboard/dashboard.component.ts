@@ -78,11 +78,31 @@ export class DashboardComponent implements OnInit {
 
         })
     }
-    cancelAppointment(appointment: Appointment){
-        this.mediService.deleteAppointment(appointment.appointmentId).subscribe(()=>{
+    // cancelAppointment(appointment: Appointment){
+    //     this.mediService.deleteAppointment(appointment.appointmentId).subscribe(()=>{
             
-        })
-    }
+    //     })
+    // }
+
+    // cancelAppointment(appointment: Appointment) {
+    //     if (confirm("Are you sure you want to cancel this appointment?")) {
+    //       appointment.status = 'Cancelled'; // or any relevant field
+    //       this.mediService.updateAppointment(appointment).subscribe(() => {
+    //         // handle success
+    //         this.appointments
+    //       });
+    //     }
+    //   }
+    cancelAppointment(appointment: Appointment) {
+        if (confirm("Are you sure you want to cancel this appointment?")) {
+          // Update the appointment status instead of deleting it
+          appointment.status = 'Cancelled'; // or any appropriate status value
+          this.mediService.updateAppointment(appointment).subscribe(() => {
+            // Optionally refresh appointments or show a message
+            this.loadPatientData(); // reload updated data
+          });
+        }
+      }
 
     loadPatientData(){
         this.mediService.getPatientById(this.patientId).subscribe({

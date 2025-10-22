@@ -44,6 +44,29 @@
 # Content-Type: application/json
 
 # {
+#     "username": "aaari88",
+#     "password": "Welcome@123",
+#     "role": "Patient",
+#     "fullName": "Aari Came Ron",
+#     "dateOfBirth": "2003-07-06",
+#     "contactNumber": "1234567890",
+#     "email": "aari@gmail.com",
+#     "address": "123, Dubai Main street, Dubai narrow street, Dubai"
+# }
+
+# POST http://localhost:5000/users/login
+# Content-Type: application/json
+
+# {
+#         "username": "aaari88",
+#     "password": "Welcome@123"
+# }
+
+
+# POST http://localhost:5000/users/register
+# Content-Type: application/json
+
+# {
 #     "username": "barath2003",
 #     "password": "Welcome@123",
 #     "role": "Patient",
@@ -152,17 +175,17 @@
 # GET http://localhost:5000/patient
 # Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUGF0aWVudCIsInN1YiI6ImJhcmF0aDIwMDMiLCJpYXQiOjE3NjEwNTAyMjMsImV4cCI6MTc2MTEzNjYyM30.TeNLwMcsf4xHzYwlFbkC86a93E0gw5xGel8MmIqb4OQ
 
-PUT http://localhost:5000/patient/2
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUGF0aWVudCIsInN1YiI6ImJhcmF0aDIwMDMiLCJpYXQiOjE3NjEwNTAyMjMsImV4cCI6MTc2MTEzNjYyM30.TeNLwMcsf4xHzYwlFbkC86a93E0gw5xGel8MmIqb4OQ
+# PUT http://localhost:5000/patient/2
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUGF0aWVudCIsInN1YiI6ImFhYXJpODgiLCJpYXQiOjE3NjEwNTUyNDIsImV4cCI6MTc2MTE0MTY0Mn0.uoLhqJa-oYDxrslkFykzKw6gsCZg7-JyKACTIcT8Ps8
 
-{
-    "fullName": "Barath Raj C R",
-    "dateOfBirth": "2003-07-06",
-    "contactNumber": "1234567890",
-    "email": "barath69@gmail.com",
-    "address": "123, Dubai Main Road, Dubai narrow street, Dubai"
-}
+# {
+#     "fullName": "Aari Came Ron",
+#     "dateOfBirth": "2003-07-06",
+#     "contactNumber": "1234567890",
+#     "email": "aari@gmail.com",
+#     "address": "123, Dubai Main road, Dubai narrow street, Dubai"
+# }
 
 #-------------------------------------------
 # GET  http://localhost:5000/patient/1
